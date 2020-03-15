@@ -41,7 +41,9 @@
     "test-server": "mocha --recursive test/server",
     "test-server-coverage": "nyc --reporter=lcov --reporter=text mocha --recursive test/server",
     "eslint": "eslint .",
-    "open-coverage": "open coverage/lcov-report/index.html"
+    "open-coverage": "open coverage/lcov-report/index.html",
+    "snyk-protect": "snyk protect",
+    "prepare": "yarn run snyk-protect"
   },
   "dependencies": {
     "archiver": "^2.1.1",
@@ -77,7 +79,8 @@
     "spellchecker": "^3.4.4",
     "testcheck": "^1.0.0-rc.2",
     "tmp": "^0.0.33",
-    "websocket": "^1.0.25"
+    "websocket": "^1.0.25",
+    "snyk": "^1.299.0"
   },
   "devDependencies": {
     "asar": "^0.14.0",
@@ -230,5 +233,6 @@
       "node_modules/spellchecker/build/Release/*.node",
       "node_modules/websocket/build/Release/*.node"
     ]
-  }
+  },
+  "snyk": true
 }
